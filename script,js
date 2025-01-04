@@ -1,0 +1,25 @@
+ let wordInput = document.getElementById("word-input");
+    let result = document.getElementById("result");
+    function scanWord(){
+        // result.innerHTML = wordInput.value;
+        // if(wordInput.value.includes(" ")){
+        //     let formattedText = wordInput.value.split(" ")
+        //     result.innerHTML = formattedText.length
+        //     console.log(formattedText);
+        // }
+        let words = wordInput.value
+let new_words = []
+if(words.length > 1){
+for (word in words){
+    new_words.push(words[word]);
+}
+// console.log(new_words);
+let vowelsInWord = new_words.filter(el=>el === "a" || el === "e" || el === "i" || el === "o" || el === "u" || el === "A" || el === "E" || el === "I" || el === "O" || el === "U")
+let spaces = new_words.filter(el => el === " " || el === "-")
+// console.log(vowelsInWord);
+result.innerHTML =  `"${words}" is a ${words.length - spaces.length} letter word <br> It has ${vowelsInWord.length} vowels and ${words.length - (vowelsInWord.length + spaces.length)} consonants  `;
+console.log(spaces.length);
+
+    }
+    }
+   
